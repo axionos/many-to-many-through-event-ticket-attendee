@@ -8,7 +8,7 @@ Event >- Ticket -< Attendee
 
 When describing this relationship, we'd say an `Event` has many `Attendee`s through `Ticket`s and also that an `Attendee` has many `Event`s through `Ticket`s. A `Ticket` belongs to an `Event` and an `Attendee.`
 
-Without a `Ticket`, an `Event` would have no `Attendee`s, and vice-versa. The `Ticket` model, then, is our single source of truth in this relationship. Think about it from experience: when a ticket is created for you, it has the name of the `Attendee`, *you*, on it, as well as information about the `Event`. If we want to know who is going to be at the event, we would check each `Ticket` for its `Attendee` and make a list of all of them, and if you're an `Attendee` who wants information about the `Event`, you'd check the information on the `Ticket`. The `Ticket` is proof of both the connection between the `Event` and the `Attendee`. 
+Without a `Ticket`, an `Event` would have no `Attendee`s, and vice-versa. The `Ticket` model, then, is our single source of truth in this relationship. Think about it from experience: when a ticket is created for you, it has the name of the `Attendee`, *you*, on it, as well as information about the `Event`. If we want to know who is going to be at the event, we would check each `Ticket` for its `Attendee` and make a list of all of them, and if you're an `Attendee` who wants information about the `Event`, you'd check the information on the `Ticket`. The `Ticket` is proof of both the connection between the `Event` and the `Attendee`.
 
 ## Topics
 
@@ -26,7 +26,7 @@ We've provided you with a console that you can use to test your code! That's rig
 
 ## Deliverables
 
-The files for each model have already been created for you in the `app/models` folder.  Go into each file and write out everything necessary to get the methods below to work. Methods separated with `.` are class methods, while methods separated with `#` are instance methods. For example: `Event.all` denotes a class method, and `Event#sell_to_break_even` denotes an instance method. 
+The files for each model have already been created for you in the `app/models` folder.  Go into each file and write out everything necessary to get the methods below to work. Methods separated with `.` are class methods, while methods separated with `#` are instance methods. For example: `Event.all` denotes a class method, and `Event#sell_to_break_even` denotes an instance method.
 
 *NOTE: In order to build out the methods below, it may be in your interest to write some extra helper methods! These are not required methods per the deliverables, but they will make your code a lot nicer to look at. Remember that we generally want each method to complete only one task! If it does more than one task, we should break that into a smaller method when possible.*
 
@@ -34,32 +34,32 @@ The files for each model have already been created for you in the `app/models` f
 
 Each `Event` should have a name, a total_cost, and a ticket_price. The total_cost is the amount of money that has been spent on over-head costs and needs to be made back in ticket sales for the event to reach the break-even point and begin making profit. The ticket price is the amount each ticket is sold for. It's up to you to make up these attributes for each `Event` instance
 
-+ `Event.all`
-  + Returns an array of all `Event`s
-+ `Event#sell_to_break_even`
-  + Returns the number of `Ticket`s that still need to be "purchased" for this `Event` before the `Event` reaches the break-even point. If the `Event` has sold enough `Ticket`s to break-even, return the number 0. 
-+ `Event#attendees`
+<!-- + `Event.all`
+  + Returns an array of all `Event`s -->
+<!-- + `Event#sell_to_break_even`
+  + Returns the number of `Ticket`s that still need to be "purchased" for this `Event` before the `Event` reaches the break-even point. If the `Event` has sold enough `Ticket`s to break-even, return the number 0. -->
+<!-- + `Event#attendees`
   + Returns an array of `Attendee`s that have `Ticket`s for the `Event`
 + `Event#average_age`
-  + Returns the average age of all the `Attendee`s that will be at the `Event`
+  + Returns the average age of all the `Attendee`s that will be at the `Event` -->
 
 ### `Ticket`
 
 A `Ticket` instance represents an `Attendee`'s purchase of a `Ticket` for an `Event`. All a ticket needs to be initiated is an `Attendee` and an `Event`
 
-+ `Ticket.all`
-  + Returns an array of all Tickets
+<!-- + `Ticket.all`
+  + Returns an array of all Tickets -->
 
 ### `Attendee`
 
 Each `Attendee` should have a name and an age
 
-+ `Attendee.all`
-  + Returns an array of all `Attendees`
-+ `Attendee#events`
-  + Returns an array of all `Event`s that the `Attendee` is attending.
-+ `Attendee#money_spent`
-  + Returns the dollar amount this `Attendee` has spent on `Tickets` for `Events`
+<!-- + `Attendee.all`
+  + Returns an array of all `Attendees` -->
+<!-- + `Attendee#events`
+  + Returns an array of all `Event`s that the `Attendee` is attending. -->
+<!-- + `Attendee#money_spent`
+  + Returns the dollar amount this `Attendee` has spent on `Tickets` for `Events` -->
 
 ## Bonus Model
 
@@ -76,12 +76,12 @@ Let's create another file in `app/models` for a new model that we'll call `Venue
 + `Venue#attendees`
   + Returns an array of every `Attendee` that has purchased a `Ticket` for an `Event` held at this `Venue`
 
-## Bonus Method 
+## Bonus Method
 
 + `Venue.guest_lists`
-  + Returns an array of hashes for each `Event` being held at this particular `Venue`. Each hash will have the keys "name", and "guest_list", where "name" returns a string of the name of the `Event`, and "guest_list" returns an array of `Attendee`s attending that event. 
+  + Returns an array of hashes for each `Event` being held at this particular `Venue`. Each hash will have the keys "name", and "guest_list", where "name" returns a string of the name of the `Event`, and "guest_list" returns an array of `Attendee`s attending that event.
 
-### Other Bonus Methods 
+### Other Bonus Methods
 
 + `Attendee#venues`
-  + Returns an array of each `Venue` instance for every `Event` the particular `Attendee` has a `Ticket` for. 
+  + Returns an array of each `Venue` instance for every `Event` the particular `Attendee` has a `Ticket` for.
